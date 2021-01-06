@@ -32,9 +32,10 @@ const update_preview = () => {
     load_preview();
 };
 
-const save_file = () => downloadFile(JSON.stringify(database, null, 4), file_name);
-
-const close_window = window => addClass(selectElement(`#${window}`), "closed");
+const clear = () => {
+    database = new Object();
+    load_preview();
+};
 
 const confirm_upload = () => {
     const json_upload_input = selectElement("#json-upload-input");
@@ -52,3 +53,7 @@ const confirm_upload = () => {
         json_upload_input.value = null;
     }
 };
+
+const save_file = () => downloadFile(JSON.stringify(database, null, 4), file_name);
+
+const close_window = window => addClass(selectElement(`#${window}`), "closed");

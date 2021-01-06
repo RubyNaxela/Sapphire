@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, button, input, label {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: #3c3f41;
+    color: #ddd;
+}
+
+#header {
+    min-width: 100vw;
+    height: 2.33rem;
+    display: flex;
+    box-shadow: 0 8px 8px #2b2b2b;
+}
+
+#title, .menu, .menu-item {
+    padding: 0.5rem;
+}
+
+#name {
+    font-family: 'JetBrains Mono', monospace;
+    color: #7f9fbf;
+}
+
+.menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.menu:hover {
+    background-color: #2b2b2b;
+}
+
+.menu:hover .sub-menu {
+    visibility: visible;
+}
+
+.sub-menu {
+    position: absolute;
+    top: 1.8rem;
+    left: 0;
+    background-color: #3c3f41;
+    box-shadow: 4px 4px 8px #2b2b2b;
+    visibility: hidden;
+}
+
+.menu-item:hover {
+    background-color: #2b2b2b;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: min-content max-content;
+}
+
+#preview-pane {
+    display: inline-block;
+    vertical-align: top;
+    width: fit-content;
+    max-width: 33vw;
+    min-height: calc(100vh - 3.33rem);
+    overflow-x: scroll;
+    padding: 0.5rem;
+    background-color: #2b2b2b;
+    color: #abb7c4;
+}
+
+pre {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+pre .json-string { 
+    color: #70845d;
+}
+
+pre .json-number {
+    color: #7f9fbf;
+}
+
+pre .json-boolean {
+    color: #c38350;
+}
+
+pre .json-null {
+    color: #c38350;
+}
+
+pre .json-key {
+    color: #9880ad;
+}
+
+#editor-pane {
+    display: inline-block;
+    vertical-align: top;
+    margin: 1rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: #4d5052;
+    padding: 0.25rem;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.value-cell .button {
+    width: 6rem;
+}
+
+.button-cell .button {
+    width: 7.5rem;
+}
+
+.remove-button-cell .button {
+    width: 3rem;
+}
+
+.button.blue {
+    background-color: #3b5a7d;
+}
+
+input[type=text], input[type=number] {
+    background-color: #46494a;
+    color: #ddd;
+}
+
+.object-table {
+    border: 3px solid #bbb;
+}
+
+.array-table {
+    border: 3px dashed #bbb;
+}
+
+td {
+    border: 1px solid #bbb;
+    vertical-align: top;
+}
+
+.value-cell.type-buttons {
+    text-align: center;
+}
+
+.key-cell input {
+    font-weight: bold;
+}
+
+.null-indicator {
+    color: #aaa;
+    font-style: italic;
+    padding: 0.2rem;
+}
+
+.value-cell input[type=checkbox] {
+    transform: scale(1.25);
+    margin: 0.33rem;
+}
+
+.add-button-cell, .remove-button-cell {
+    border: none;
+}
+
+.window-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(5px) brightness(60%);
+}
+
+.window-cover.closed {
+    visibility: hidden;
+}
+
+.window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px #2b2b2b;
+}
+
+.window-bar {
+    background-color: #2b2b2b;
+    padding: 0.15rem;
+    text-align: center;
+    position: relative;
+}
+
+.window-close-button {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: #e80027;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.window-container {
+    background-color: #3c3f41;
+    padding: 2rem;
+}
+
+.window-buttons {
+    padding: 0.5rem;
+    text-align: center;
+}

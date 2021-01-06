@@ -97,10 +97,10 @@ const insert_value_input = (button, type) => {
             value_cell.appendChild(new_boolean_input(false));
             break;
         case ARRAY:
-            value_cell.appendChild(new_array_table());
+            value_cell.appendChild(new_array_table(new Array()));
             break;
         case OBJECT:
-            value_cell.appendChild(new_object_table());
+            value_cell.appendChild(new_object_table(new Object()));
             break;
         case NULL:
             value_cell.appendChild(new_null_indicator());

@@ -32,21 +32,18 @@ const update_preview = () => {
     load_preview();
 };
 
-const clear = () => {
-    database = new Object();
+const update_database = new_data => {
+    database = new_data;
+    load_table_from_database();
     load_preview();
-};
+}
 
 const confirm_upload = () => {
     const json_upload_input = selectElement("#json-upload-input");
     const file = json_upload_input.files[0];
     if (_(file)) {
         const json_reader = new FileReader();
-        json_reader.onload = event => {
-            database = JSON.parse(event.target.result);
-            load_preview();
-            load_table_from_database();
-        };
+        json_reader.onload = event => update_database(JSON.parse(event.target.result));
         json_reader.readAsText(file);
         file_name = file.name;
         close_window("upload-window");

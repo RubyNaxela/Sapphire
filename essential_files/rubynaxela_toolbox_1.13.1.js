@@ -85,7 +85,7 @@ const _P = (value) => value > 0
 // Greatest common divisor
 const gcd = (a, b) => (b == 0) ? a : gcd(b, a % b);
 
-// Simple rounding with Number.EPSILON added to nearest integer 
+// Simple rounding to nearest integer (with Number.EPSILON added)
 const simpleRound = number => Math.round(Number.EPSILON + number);
 
 // An object that provides some data formatting functions
